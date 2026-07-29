@@ -1,22 +1,7 @@
-export default function CodePreview() {
-  return (
-    <div className="w-[560px] overflow-hidden rounded-2xl border border-cyan-500/20 bg-[#09111d] shadow-2xl shadow-cyan-500/10">
+import Editor from "@monaco-editor/react";
+import { motion } from "framer-motion";
 
-      <div className="flex items-center gap-2 border-b border-cyan-500/10 bg-black/30 px-5 py-3">
-
-        <div className="h-3 w-3 rounded-full bg-red-500" />
-        <div className="h-3 w-3 rounded-full bg-yellow-400" />
-        <div className="h-3 w-3 rounded-full bg-green-500" />
-
-        <span className="ml-4 text-sm text-slate-400">
-          mission_01.py
-        </span>
-
-      </div>
-
-      <pre className="overflow-x-auto p-6 text-[15px] leading-8 text-slate-300">
-{`def authenticate(user):
-
+const code = `def authenticate(user):
     clearance = "operator"
 
     if user.role == clearance:
@@ -25,9 +10,33 @@ export default function CodePreview() {
     return True
 
 
-authenticate("Mission")`}
-      </pre>
+authenticate("Mission")
+`;
 
-    </div>
+export default function CodePreview() {
+  return (
+    <motion.div
+      initial={{ opacity: 0, x: 80, rotate: 4 }}
+      animate={{ opacity: 1, x: 0, rotate: 0 }}
+      transition={{ duration: 0.8 }}
+      className="w-full max-w-[650px] overflow-hidden rounded-2xl border border-cyan-500/20 bg-[#0b1220] shadow-[0_0_60px_rgba(0,229,255,.12)]"
+    >
+      <Editor
+        height="420px"
+        defaultLanguage="python"
+        value={code}
+        theme="vs-dark"
+        options={{
+          readOnly: true,
+          minimap: { enabled: false },
+          fontSize: 16,
+          fontFamily: "JetBrains Mono",
+          scrollBeyondLastLine: false,
+          lineNumbers: "on",
+          folding: false,
+          wordWrap: "on",
+        }}
+      />
+    </motion.div>
   );
 }

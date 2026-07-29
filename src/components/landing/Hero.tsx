@@ -1,16 +1,22 @@
+import { motion } from "framer-motion";
 import CodePreview from "./CodePreview";
 
 export default function Hero() {
   return (
-    <section className="mx-auto flex min-h-[85vh] max-w-7xl items-center justify-between gap-20 px-8">
+   <section className="relative mx-auto flex min-h-[88vh] max-w-7xl flex-col items-center justify-between gap-16 px-8 py-20 lg:flex-row">
 
-      <div className="max-w-xl">
+      <motion.div
+  initial={{ opacity: 0, y: 50 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8 }}
+  className="max-w-xl"
+>
 
         <p className="mb-4 text-cyan-400 uppercase tracking-[0.35em]">
           CYBER OPERATIONS TRAINING PLATFORM
         </p>
 
-        <h1 className="mb-6 text-6xl font-black leading-tight">
+        <h1 className="mb-6 text-5xl lg:text-7xl font-black leading-tight">
 
           Learn Python
 
@@ -29,17 +35,17 @@ export default function Hero() {
 
         <div className="flex gap-4">
 
-          <button className="rounded-xl bg-cyan-500 px-8 py-4 font-bold text-black hover:bg-cyan-400">
-            INITIALIZE TRAINING
-          </button>
+          <button className="rounded-xl bg-cyan-500 px-8 py-4 font-bold text-black transition-all duration-300 hover:scale-105 hover:bg-cyan-400 hover:shadow-[0_0_35px_rgba(0,229,255,.45)]">
+          INITIALIZE TRAINING
+        </button>
 
-          <button className="rounded-xl border border-slate-700 px-8 py-4 hover:border-cyan-400">
-            VIEW GITHUB
-          </button>
+          <button className="rounded-xl border border-slate-700 px-8 py-4 transition-all duration-300 hover:scale-105 hover:border-cyan-400 hover:bg-cyan-500/10">
+          VIEW GITHUB
+        </button>
 
         </div>
 
-      </div>
+        </motion.div>
 
       <CodePreview />
 

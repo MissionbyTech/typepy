@@ -1,33 +1,38 @@
 @import "tailwindcss";
+@import "./styles/theme.css";
+
+@import "@fontsource/inter";
+@import "@fontsource/jetbrains-mono";
 
 html,
 body,
-#root {
-  margin: 0;
-  min-height: 100%;
+#root{
+height:100%;
 }
 
-body {
-  background: #040816;
-  color: white;
-  font-family:
-    Inter,
-    system-ui,
-    sans-serif;
-
-  overflow-x: hidden;
+body{
+margin:0;
+background:var(--bg);
+color:var(--text);
+font-family:"Inter",sans-serif;
+overflow-x:hidden;
 }
 
-* {
-  box-sizing: border-box;
+*{
+box-sizing:border-box;
 }
 
-button {
-  cursor: pointer;
-  transition: .25s;
+code,
+pre{
+font-family:"JetBrains Mono",monospace;
 }
 
-::selection {
-  background: #06b6d4;
-  color: black;
+button{
+cursor:pointer;
+transition:.25s;
+}
+
+::selection{
+background:var(--primary);
+color:#000;
 }
