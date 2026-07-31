@@ -1,7 +1,11 @@
 import { motion } from "framer-motion";
 import CodePreview from "./CodePreview";
 
-export default function Hero() {
+interface HeroProps {
+  onStart: () => void;
+}
+
+export default function Hero({ onStart }: HeroProps) {
   return (
    <section className="relative mx-auto flex min-h-[88vh] max-w-7xl flex-col items-center justify-between gap-16 px-8 py-20 lg:flex-row">
 
@@ -35,9 +39,15 @@ export default function Hero() {
 
         <div className="flex gap-4">
 
-          <button className="rounded-xl bg-cyan-500 px-8 py-4 font-bold text-black transition-all duration-300 hover:scale-105 hover:bg-cyan-400 hover:shadow-[0_0_35px_rgba(0,229,255,.45)]">
-          INITIALIZE TRAINING
-        </button>
+        <button
+  onClick={() => {
+    console.log("Button clicked");
+    onStart();
+  }}
+  className="rounded-xl bg-cyan-500 px-8 py-4 font-bold text-black transition-all duration-300 hover:scale-105 hover:bg-cyan-400 hover:shadow-[0_0_35px_rgba(0,229,255,.45)]"
+>
+  INITIALIZE TRAINING
+</button>
 
           <button className="rounded-xl border border-slate-700 px-8 py-4 transition-all duration-300 hover:scale-105 hover:border-cyan-400 hover:bg-cyan-500/10">
           VIEW GITHUB

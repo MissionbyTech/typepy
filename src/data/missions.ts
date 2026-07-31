@@ -1,0 +1,42 @@
+export const missions = [
+  {
+    id: 1,
+    title: "Variables",
+    difficulty: 1,
+    xp: 25,
+    duration: "4 min",
+    completed: false,
+  },
+  {
+    id: 2,
+    title: "Data Types",
+    difficulty: 1,
+    xp: 30,
+    duration: "5 min",
+    completed: false,
+  },
+  {
+    id: 3,
+    title: "Conditions",
+    difficulty: 2,
+    xp: 40,
+    duration: "6 min",
+    completed: false,
+  },
+  {
+    id: 4,
+    title: "Loops",
+    difficulty: 2,
+    xp: 50,
+    duration: "8 min",
+    completed: false,
+  },
+  {
+    id: 5,
+    title: "Functions",
+    difficulty: 3,
+    xp: 75,
+    duration: "10 min",
+    completed: false,
+  },
+];

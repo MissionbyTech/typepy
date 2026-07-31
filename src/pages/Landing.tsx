@@ -9,8 +9,11 @@ import Background from "../components/landing/Background";
 import BootScreen from "../components/landing/BootScreen";
 import Stats from "../components/landing/Stats";
 import FeatureCard from "../components/landing/FeatureCard";
+interface LandingProps {
+  onStart: () => void;
+}
 
-export default function Landing() {
+export default function Landing({ onStart }: LandingProps) {
   const [loading, setLoading] = useState(true);
 
   if (loading) {
@@ -24,7 +27,7 @@ export default function Landing() {
       <div className="relative z-10">
         <Navbar />
 
-        <Hero />
+        <Hero onStart={onStart} />
 
         <Stats />
 
